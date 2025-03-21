@@ -22,3 +22,7 @@ dependencyResolutionManagement {
 rootProject.name = "MoniePointAssessment"
 include(":app")
 include(":core:view")
+include(":feature:home")
+include(":feature:calculate")
+include(":feature:shipment")
+include(":feature:profile")
