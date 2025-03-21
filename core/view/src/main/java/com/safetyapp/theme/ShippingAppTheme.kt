@@ -1,4 +1,4 @@
-package com.safetyapp.moniepointassessment.ui.theme
+package com.safetyapp.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -169,13 +169,13 @@ private val typography =     ShippingAppAppTypography(
         lineHeight = 36.sp,
         letterSpacing = 0.sp,
     ),
-    headlineSmall = TextStyle(
-//        fontFamily = Roboto,
-        fontWeight = FontWeight.W400,
-        fontSize = 24.sp,
-        lineHeight = 32.sp,
-        letterSpacing = 0.sp,
-    ),
+//    headlineSmall = TextStyle(
+////        fontFamily = Roboto,
+//        fontWeight = FontWeight.W400,
+//        fontSize = 24.sp,
+//        lineHeight = 32.sp,
+//        letterSpacing = 0.sp,
+//    ),
     titleLarge = TextStyle(
 //        fontFamily = Roboto,
         fontWeight = FontWeight.W400,
@@ -211,17 +211,9 @@ private val typography =     ShippingAppAppTypography(
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
     ),
-    bodyMedium = TextStyle(
-//        fontFamily = Roboto,
-        fontWeight = FontWeight.W400,
-        fontSize = 24.sp,
-        lineHeight = 20.sp,
-        letterSpacing = 0.25.sp,
-    ),
-
-
 
 )
+
 
 private  val shape = ShippingAppAppShape(
     container = RoundedCornerShape(12.dp),
@@ -251,7 +243,7 @@ fun ShippingAppTheme(
     )
 }
 
-object SafeBuddyTheme {
+object ShippingAppTheme {
     val colorScheme: ShippingAppColorScheme @Composable get() = localShippingAppColorScheme.current
     val typography: ShippingAppAppTypography @Composable get() = localShippingAppTypography.current
     val size: ShippingAppAppSize @Composable get() = localShippingAppSize.current

@@ -1,9 +1,9 @@
-package com.safetyapp.moniepointassessment.ui.theme
+package com.safetyapp.theme
 
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import com.safetyapp.moniepointassessment.R
+import com.safetyapp.moniepointassessment.core.view.R
 
 val OpenSans = FontFamily(
     Font(R.font.roboto_bold, FontWeight.Normal),
