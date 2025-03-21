@@ -1,4 +1,4 @@
-package com.safetyapp.moniepointassessment.ui.theme
+package com.safetyapp.theme
 
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -52,14 +52,14 @@ data class ShippingAppAppTypography(
     val titleSmall: TextStyle,
     val labelLarge: TextStyle,
     val bodyLarge: TextStyle,
-    val bodyMedium: TextStyle,
-    val bodySmall: TextStyle,
-    val labelMedium: TextStyle,
-    val labelSmall: TextStyle,
-    val headlineSmall: TextStyle,
+    //   val bodyMedium: TextStyle,
+//    val bodySmall: TextStyle,
+//    val labelMedium: TextStyle,
+//    val labelSmall: TextStyle,
+//    val headlineSmall: TextStyle,
 
 
-    )
+)
 
 @Stable
 data class ShippingAppAppShape(
@@ -117,17 +117,17 @@ val localShippingAppTypography = staticCompositionLocalOf {
         displaySmall = TextStyle.Default,
         headlineLarge = TextStyle.Default,
         headlineMedium = TextStyle.Default,
-        headlineSmall = TextStyle.Default,
+        //  headlineSmall = TextStyle.Default,
         titleLarge = TextStyle.Default,
         titleMedium = TextStyle.Default,
         titleSmall = TextStyle.Default,
         labelLarge = TextStyle.Default,
         bodyLarge = TextStyle.Default,
-        bodyMedium = TextStyle.Default,
-        bodySmall = TextStyle.Default,
-        labelMedium = TextStyle.Default,
-        labelSmall = TextStyle.Default,
-
+        //     bodyMedium = TextStyle.Default,
+        //    bodySmall = TextStyle.Default,
+        //     labelMedium = TextStyle.Default,
+        //      labelSmall = TextStyle.Default,
+//
     )
 
 }

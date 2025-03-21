@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MoniePointAssessment"
 include(":app")
- 
+include(":core:view")
