@@ -1,4 +1,4 @@
-//package com.safetyapp.moniepointassessment.feature.home
+//package com.safetyapp.moniepointassessment.feature.calculate
 //
 //import org.junit.Test
 //

@@ -2,14 +2,16 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
 }
 
 android {
     namespace = "com.safetyapp.moniepointassessment.feature.profile"
-    compileSdk = libs.versions.compile.sdk.get().toInt()
+    compileSdk =libs.versions.compile.sdk.get().toInt()
 
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
+
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -37,5 +39,7 @@ android {
 }
 
 dependencies {
+
     implementation(project(":core:view"))
+
 }
