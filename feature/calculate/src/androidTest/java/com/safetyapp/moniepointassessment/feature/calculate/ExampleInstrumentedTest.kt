@@ -1,4 +1,4 @@
-package com.safetyapp.moniepointassessment
+package com.safetyapp.moniepointassessment.feature.calculate
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,9 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.safetyapp.moniepointassessment.test", appContext.packageName)
+        assertEquals(
+            "com.safetyapp.moniepointassessment.feature.calculate.test",
+            appContext.packageName
+        )
     }
 }

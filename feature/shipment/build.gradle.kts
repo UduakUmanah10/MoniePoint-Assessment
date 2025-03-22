@@ -2,11 +2,12 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
 }
 
 android {
     namespace = "com.safetyapp.moniepointassessment.feature.shipment"
-    compileSdk = libs.versions.compile.sdk.get().toInt()
+    compileSdk =libs.versions.compile.sdk.get().toInt()
 
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
@@ -37,5 +38,7 @@ android {
 }
 
 dependencies {
+
     implementation(project(":core:view"))
+
 }

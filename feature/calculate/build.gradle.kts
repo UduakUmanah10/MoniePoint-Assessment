@@ -5,8 +5,9 @@ plugins {
 }
 
 android {
-    namespace = "com.safetyapp.moniepointassessment"
+    namespace = "com.safetyapp.moniepointassessment.feature.calculate"
     compileSdk = libs.versions.compile.sdk.get().toInt()
+
 
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
@@ -37,5 +38,7 @@ android {
 }
 
 dependencies {
+
     implementation(project(":core:view"))
+
 }
