@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="topAppbartext">Calculate</string>
+    <string name="Sender_Location">Sender Location</string>
+    <string name="Receiver_Location">Receiver Location</string>
+    <string name="Approx_Weight">Approx_Weight</string>
+</resources>

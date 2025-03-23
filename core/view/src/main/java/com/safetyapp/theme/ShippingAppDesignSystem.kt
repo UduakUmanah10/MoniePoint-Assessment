@@ -1,5 +1,6 @@
 package com.safetyapp.theme
 
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
@@ -7,6 +8,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 
 @Stable
 data class ShippingAppColorScheme(
@@ -64,7 +66,8 @@ data class ShippingAppAppTypography(
 @Stable
 data class ShippingAppAppShape(
     val container: Shape,
-    val button: Shape
+    val button: Shape,
+    val TextfieldShape:Shape
 )
 
 @Stable
@@ -136,7 +139,8 @@ val localShippingAppTypography = staticCompositionLocalOf {
 val localShippingAppShape = staticCompositionLocalOf {
     ShippingAppAppShape(
         container = RectangleShape,
-        button = RectangleShape
+        button = RectangleShape,
+        TextfieldShape = RoundedCornerShape(3.dp)
     )
 
 }
