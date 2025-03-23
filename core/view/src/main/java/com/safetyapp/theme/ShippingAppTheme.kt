@@ -217,7 +217,8 @@ private val typography =     ShippingAppAppTypography(
 
 private  val shape = ShippingAppAppShape(
     container = RoundedCornerShape(12.dp),
-    button = RoundedCornerShape(50)
+    button = RoundedCornerShape(50),
+    TextfieldShape = RoundedCornerShape(15.dp)
 
 )
 private val size = ShippingAppAppSize(

@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -16,14 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.safetyapp.composables.PreviewAndLightDark
 import com.safetyapp.theme.ShippingAppTheme
 
-@Composable
-fun BoxComposable(){
-    Image(
-        modifier = Modifier.padding( 100.dp).size(50.dp),
-        painter = painterResource(id = com.safetyapp.moniepointassessment.core.view.R.drawable.box),
-        contentDescription = "box"
-    )
-}
+
 
 @Composable
 fun lazyColumContent(){
@@ -46,13 +38,10 @@ fun lazyColumContent(){
 @PreviewAndLightDark
 @Composable
 fun BoxPreview(){
-    ShippingAppTheme() {
+    ShippingAppTheme{
         Column(modifier = Modifier.fillMaxWidth().fillMaxHeight()){
             lazyColumContent()
-
         }
 
-
     }
-
 }
