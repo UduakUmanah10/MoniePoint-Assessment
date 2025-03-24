@@ -11,11 +11,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 
-private val light_primary = Color(0xFF006495)
-private val light_onPrimary = Color(0xFFffffff)
+private val light_primary = Color(0xFF493390)
+private val light_background = Color(0xFFfffffe)
+private val light_onPrimary = Color(0xFFe47929)
 private val light_primaryContainer = Color(0xFFc9e6ff)
-private val light_onPrimaryContainer = Color(0xFF001e31)
-private val light_secondary = Color(0xFF50606e)
+private val light_onPrimaryContainer = Color(0xFFc7c7c7)
+private val light_secondary = Color(0xFF414145)
+
+
+
+
 private val light_onSecondary = Color(0xFFffffff)
 private val light_secondaryContainer = Color(0xFFd3e4f5)
 private val light_onSecondaryContainer = Color(0xFF0c1d29)
@@ -27,7 +32,6 @@ private val light_error = Color(0xFFba1b1b)
 private val light_errorContainer = Color(0xFFffdad4)
 private val light_onError = Color(0xFFba1b1b)
 private val light_onErrorContainer = Color(0xFF410001)
-private val light_background = Color(0xFFfcfcff)
 private val light_onBackground = Color(0xFF1a1c1e)
 private val light_surface = Color(0xFFfcfcff)
 private val light_onSurface = Color(0xFF1a1c1e)
@@ -38,11 +42,17 @@ private val light_inverseOnSurface = Color(0xFFcdc9c2)
 private val light_inverseSurface = Color(0xFF2f3032)
 private val light_ColorBar = Color(0xFFf4f4f2)
 
-private val dark_primary = Color(0xFF8bcdff)
-private val dark_onPrimary = Color(0xFF111810)
+private val dark_primary = Color(0xFF493390)
+private val dark_background = Color(0xFFfffffe)
+private val dark_onPrimary = Color(0xFFe47929)
 private val dark_primaryContainer = Color(0xFF004b72)
-private val dark_onPrimaryContainer = Color(0xFFc9e6ff)
-private val dark_secondary = Color(0xFFb7c8d9)
+private val dark_onPrimaryContainer = Color(0xFFc7c7c7)
+private val dark_secondary = Color(0xFF414145)
+
+
+
+
+
 private val dark_onSecondary = Color(0xFFfefefe)
 private val dark_secondaryContainer = Color(0xFF394956)
 private val dark_onSecondaryContainer = Color(0xFFd3e4f5)
@@ -54,7 +64,6 @@ private val dark_error = Color(0xFFffb4a9)
 private val dark_errorContainer = Color(0xFF930006)
 private val dark_onError = Color(0xFF680003)
 private val dark_onErrorContainer = Color(0xFFffdad4)
-private val dark_background = Color(0xFF2b2b2a)
 private val dark_onBackground = Color(0xFFe2e2e5)
 private val dark_surface = Color(0xFF1a1c1e)
 private val dark_onSurface = Color(0xFFe2e2e5)
@@ -73,12 +82,14 @@ private val seed = Color(0xFF0f3750)
 private val error = Color(0xFFba1b1b)
 
 private  val lightColorScheme = ShippingAppColorScheme(
-
     primary = light_primary,
+    background = light_background,
     onPrimary = light_onPrimary,
     primaryContainer = light_primaryContainer,
     onPrimaryContainer = light_onPrimaryContainer,
     secondary = light_secondary,
+
+
     onSecondary = light_onSecondary,
     secondaryContainer = light_secondaryContainer,
     onSecondaryContainer = light_onSecondaryContainer,
@@ -90,7 +101,7 @@ private  val lightColorScheme = ShippingAppColorScheme(
     errorContainer = light_errorContainer,
     onError = light_onError,
     onErrorContainer = light_onErrorContainer,
-    background = light_background,
+
     onBackground = light_onBackground,
     surface = light_surface,
     onSurface = light_onSurface,
@@ -105,10 +116,14 @@ private  val lightColorScheme = ShippingAppColorScheme(
 
 
 private val darkColorScheme = ShippingAppColorScheme(
+    primary = dark_primary,
+    background = dark_background,
     onPrimary = dark_onPrimary,
     onPrimaryContainer = dark_onPrimaryContainer,
     secondary = dark_secondary,
-    primary = dark_primary,
+
+
+
     primaryContainer = dark_primaryContainer,
     onSecondary = light_onSecondary,
     secondaryContainer = dark_onSecondaryContainer,
@@ -121,7 +136,7 @@ private val darkColorScheme = ShippingAppColorScheme(
     errorContainer = dark_errorContainer,
     onError = dark_onError,
     onErrorContainer = dark_onErrorContainer,
-    background = dark_background,
+
     onBackground = dark_backgroundColor,
     surface = dark_surface,
     onSurface = dark_onSurface,
