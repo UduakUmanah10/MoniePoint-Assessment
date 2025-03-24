@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
@@ -70,7 +71,7 @@ fun CustomTextField(
     Column(modifier = modifier) {
 
         OutlinedTextField(
-            modifier = modifier.fillMaxWidth().testTag(testTag),
+            modifier = modifier.wrapContentHeight().fillMaxWidth().testTag(testTag),
             value = text,
             onValueChange = onTextChanged,
             enabled = enabled,

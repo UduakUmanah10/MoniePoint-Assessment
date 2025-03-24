@@ -71,7 +71,19 @@ fun Tablayout(){
                         selecteditem =index
                     }
                 ) {
-                    tabSelector(tabitem.title)
+                    Row(horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically) {
+                        // tabSelector(tab.title)
+
+                        Text(
+                            text = tabitem.title,
+                            modifier = Modifier
+                                .padding(8.dp),
+                           color = if (selecteditem == index) Color.Black else Color.Gray
+                        )
+                        Tabchip()
+
+//
+                    }
 
 
                 }

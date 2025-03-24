@@ -54,11 +54,6 @@ data class ShippingAppAppTypography(
     val titleSmall: TextStyle,
     val labelLarge: TextStyle,
     val bodyLarge: TextStyle,
-    //   val bodyMedium: TextStyle,
-//    val bodySmall: TextStyle,
-//    val labelMedium: TextStyle,
-//    val labelSmall: TextStyle,
-//    val headlineSmall: TextStyle,
 
 
 )
@@ -126,11 +121,7 @@ val localShippingAppTypography = staticCompositionLocalOf {
         titleSmall = TextStyle.Default,
         labelLarge = TextStyle.Default,
         bodyLarge = TextStyle.Default,
-        //     bodyMedium = TextStyle.Default,
-        //    bodySmall = TextStyle.Default,
-        //     labelMedium = TextStyle.Default,
-        //      labelSmall = TextStyle.Default,
-//
+
     )
 
 }
