@@ -2,6 +2,7 @@ package com.safetyapp.moniepointassessment.feature.shipment
 
 
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -55,7 +56,13 @@ fun Tabchip(
 
 //
 @Composable
-fun IconandText() {
+fun IconandText(
+    @DrawableRes icon:Int =com.safetyapp.moniepointassessment.core.view.R.drawable.loading,
+    tint:Color = Color.Blue,
+    contentDescription:String ="",
+    text:String = "pending",
+    textColor:Color =Color.Yellow
+) {
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
@@ -64,15 +71,16 @@ fun IconandText() {
     ) {
 
         Icon(
-            painter = painterResource(id = com.safetyapp.moniepointassessment.core.view.R.drawable.loading),
-            tint = Color.Blue,
+            painter = painterResource(id = icon),
+            tint = tint,
             modifier = Modifier.size(20.dp),
-            contentDescription = ""
+            contentDescription = contentDescription
         )
 
         Text(
-            text="in-progress",
+            text=text,
             fontSize = 15.sp,
+            color = textColor,
             modifier = Modifier
                 .wrapContentSize()
                 .padding(start =4.dp, end = 5.dp)
@@ -84,21 +92,35 @@ fun IconandText() {
 }
 
 @Composable
-fun IconAndText(modifier: Modifier =  Modifier
+fun IconAndText(
+    modifier: Modifier =  Modifier
     .padding(10.dp)
     .wrapContentWidth()
-    .wrapContentHeight()
+    .wrapContentHeight(),
+    @DrawableRes icon: Int = com.safetyapp. moniepointassessment. core. view. R. drawable. loading,
+    tint: Color = Color.Blue,
+    contentDescription: String = "",
+    text: String = "pending",
+    surfaceColor:Color = Color.Red,
+    textColor: Color= Color.Yellow
 ){
     Surface(
         modifier = modifier,
-        color = Color.Red,
+        color = surfaceColor,
         shape = RoundedCornerShape(12.dp)
     ) {
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier.wrapContentWidth().padding(5.dp)
         ) {
-            IconandText()
+            IconandText(
+                icon =icon,
+                tint =tint,
+                contentDescription =contentDescription,
+                text =text,
+                textColor =textColor
+
+            )
         }
 
     }
