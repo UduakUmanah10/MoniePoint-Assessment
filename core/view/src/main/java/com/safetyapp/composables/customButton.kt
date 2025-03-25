@@ -18,8 +18,8 @@ fun customButton(
     buttonText:String,
     onButtonClicked:()->Unit ={},
     buttonClor: ButtonColors = ButtonDefaults.buttonColors(
-        contentColor = Color.White,
-        containerColor = Color.Blue
+        contentColor = ShippingAppTheme.colorScheme.background,
+        containerColor =ShippingAppTheme.colorScheme.onPrimary
     )
 ) {
     Button(

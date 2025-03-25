@@ -27,7 +27,8 @@ fun homeScreen() {
             fontWeight = FontWeight.W500
         )
 
-        SecondScreenItem()
+        SecondScreenItem(
+        )
 
         Text(
             "Available Vehicles",

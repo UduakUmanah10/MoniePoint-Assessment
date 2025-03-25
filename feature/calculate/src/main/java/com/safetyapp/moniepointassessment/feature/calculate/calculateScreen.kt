@@ -1,5 +1,6 @@
 package com.safetyapp.moniepointassessment.feature.calculate
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -31,18 +32,18 @@ import com.safetyapp.theme.ShippingAppTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CalculateScreen(){
-
-    Column(modifier = Modifier.fillMaxHeight()) {
+    Column(modifier = Modifier.fillMaxHeight().background(ShippingAppTheme.colorScheme.onSecondary)
+    ) {
         val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
 
         CustomCenteredTopAppBar(
             scrollBehavior =scrollBehavior,
             centeredText =  stringResource(R.string.topAppbartext),
             leadingICon = R.drawable.backwardsarrow,
-            iconColor = Color.Red,
+            iconColor = ShippingAppTheme.colorScheme.background,
             onLeadingIconClicked = {},
-            titleContentColor = Color.Black,
-            containerColor = Color.Magenta
+            titleContentColor = ShippingAppTheme.colorScheme.background,
+            containerColor = ShippingAppTheme.colorScheme.primary
 
         )
 
@@ -52,17 +53,22 @@ fun CalculateScreen(){
                 .padding(12.dp),
             text = "Destination",
             fontWeight = FontWeight.Bold,
-            fontSize = 20.sp
+            fontSize = 20.sp,
+            color = ShippingAppTheme.colorScheme.secondaryContainer
         )
 
-        multipleTextInput()
+        multipleTextInput(
+
+        )
 
         Text(
             modifier = Modifier
                 .padding(start =12.dp, top = 12.dp),
             text = "Packaging",
             fontWeight = FontWeight.Bold,
-            fontSize = 20.sp
+            fontSize = 20.sp,
+            color = ShippingAppTheme.colorScheme.secondaryContainer
+
         )
         Text(
             modifier = Modifier.padding(start=12.dp)
@@ -79,7 +85,8 @@ fun CalculateScreen(){
                 .padding(start =12.dp, top = 12.dp),
             text = "Categories",
             fontWeight = FontWeight.Bold,
-            fontSize = 20.sp
+            fontSize = 20.sp,
+            color = ShippingAppTheme.colorScheme.secondaryContainer
         )
         Text(
             modifier = Modifier.padding(start=12.dp)
