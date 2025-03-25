@@ -20,12 +20,11 @@ private val light_secondary = Color(0xFF414145)
 private val light_onSecondary = Color(0xFFf9f9f9)
 private val light_secondaryContainer = Color(0xFF14212e)
 private val light_onSecondaryContainer = Color(0xFFb2b8c5)
+private val light_tertiary = Color(0xFF9ddec6)
+private val light_onTertiary = Color(0xFFdcb392)
+private val light_tertiaryContainer = Color(0xFF9ebad5)
 
 
-
-private val light_tertiary = Color(0xFF65587b)
-private val light_onTertiary = Color(0xFFffffff)
-private val light_tertiaryContainer = Color(0xFFecdcff)
 private val light_onTertiaryContainer = Color(0xFF211634)
 private val light_error = Color(0xFFba1b1b)
 private val light_errorContainer = Color(0xFFffdad4)
@@ -51,10 +50,11 @@ private val dark_secondary = Color(0xFF414145)
 private val dark_onSecondary = Color(0xFFf9f9f9)
 private val dark_secondaryContainer = Color(0xFF14212e)
 private val dark_onSecondaryContainer = Color(0xFFb2b8c5)
+private val dark_tertiary = Color(0xFF9ddec6)
+private val dark_onTertiary = Color(0xFFdcb392)
+private val dark_tertiaryContainer = Color(0xFF9ebad5)
 
-private val dark_tertiary = Color(0xFFd0c0e8)
-private val dark_onTertiary = Color(0xFF362b4a)
-private val dark_tertiaryContainer = Color(0xFF4d4162)
+
 private val dark_onTertiaryContainer = Color(0xFFecdcff)
 private val dark_error = Color(0xFFffb4a9)
 private val dark_errorContainer = Color(0xFF930006)
@@ -87,11 +87,12 @@ private  val lightColorScheme = ShippingAppColorScheme(
     onSecondary = light_onSecondary,
     secondaryContainer = light_secondaryContainer,
     onSecondaryContainer = light_onSecondaryContainer,
-
-
-    tertiary = light_secondary,
+    tertiary = light_tertiary,
     onTertiary = light_onTertiary,
     tertiaryContainer = light_tertiaryContainer,
+
+
+
     onTertiaryContainer = light_onTertiaryContainer,
     error = light_error,
     errorContainer = light_errorContainer,
@@ -120,14 +121,17 @@ private val darkColorScheme = ShippingAppColorScheme(
     onSecondary = dark_onSecondary,
     secondaryContainer = dark_secondaryContainer,
     onSecondaryContainer = dark_onSecondaryContainer,
+    tertiary = dark_tertiary,
+    onTertiary = dark_onTertiary,
+    tertiaryContainer = dark_tertiaryContainer,
 
 
 
 
     primaryContainer = dark_primaryContainer,
-    tertiary = button_cardBackground,
-    onTertiary = dark_onTertiary,
-    tertiaryContainer = dark_tertiaryContainer,
+
+
+
     onTertiaryContainer = dark_onTertiaryContainer,
     error = dark_onError,
     errorContainer = dark_errorContainer,
@@ -181,13 +185,7 @@ private val typography =     ShippingAppAppTypography(
         lineHeight = 36.sp,
         letterSpacing = 0.sp,
     ),
-//    headlineSmall = TextStyle(
-////        fontFamily = Roboto,
-//        fontWeight = FontWeight.W400,
-//        fontSize = 24.sp,
-//        lineHeight = 32.sp,
-//        letterSpacing = 0.sp,
-//    ),
+
     titleLarge = TextStyle(
 //        fontFamily = Roboto,
         fontWeight = FontWeight.W400,

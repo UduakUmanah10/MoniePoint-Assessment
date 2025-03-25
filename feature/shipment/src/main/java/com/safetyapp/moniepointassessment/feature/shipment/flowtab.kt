@@ -30,14 +30,14 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-
+data class TabItem(val title:String, val icon: ImageVector)
 @Composable
 fun TabView() {
     val tabs = listOf(
         TabItem("All", Icons.Filled.Home),
         TabItem("Favorites", Icons.Filled.Favorite),
-        TabItem("Profile", Icons.Filled.Person),
-        TabItem("Add", Icons.Filled.Add)
+        TabItem("in progress", Icons.Filled.Person),
+        TabItem("Pending", Icons.Filled.Add)
     )
     var selectedTabIndex by remember { mutableStateOf(0) }
     Column {
@@ -68,16 +68,12 @@ fun TabView() {
                             Text(
                                 text = tab.title,
                                 modifier = Modifier
-                                    .padding(8.dp),
+                                    .padding(3.dp),
                                 color = if (selectedTabIndex == index) Color.Black else Color.Gray
                             )
-                            Tabchip()
+                           Tabchip()
 
-//                            Icon(
-//                                imageVector = tab.icon,
-//                                contentDescription = tab.title,
-//                                modifier = Modifier.size(20.dp)
-//                            )
+//
                         }
                     }
                 )
@@ -85,13 +81,16 @@ fun TabView() {
         }
         when (selectedTabIndex) {
             0 -> {
-                //Composible for tab1
+                //Composible for tab
+                Text("first ")
             }
             1 -> {
                 //Composible for tab2
+                Text("second")
             }
             2 -> {
                 //Composible for tab3
+                Text("third")
             }
             3 -> {
                 //Composible for tab4
@@ -100,7 +99,7 @@ fun TabView() {
     }
 }
 
-data class TabItem(val title:String, val icon: ImageVector)
+
 
 
 
