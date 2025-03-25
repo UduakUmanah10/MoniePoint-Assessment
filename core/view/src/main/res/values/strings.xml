@@ -4,4 +4,5 @@
     <string name="Sender_Location">Sender Location</string>
     <string name="Receiver_Location">Receiver Location</string>
     <string name="Approx_Weight">Approx_Weight</string>
+    <string name="shipment_hitory">Shipment History</string>
 </resources>
