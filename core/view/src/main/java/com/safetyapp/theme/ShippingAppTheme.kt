@@ -23,15 +23,16 @@ private val light_onSecondaryContainer = Color(0xFFb2b8c5)
 private val light_tertiary = Color(0xFF9ddec6)
 private val light_onTertiary = Color(0xFFdcb392)
 private val light_tertiaryContainer = Color(0xFF9ebad5)
+private val light_onTertiaryContainer = Color(0xFF614ab4)
+private val light_surface = Color(0xFF9a83ed)
 
 
-private val light_onTertiaryContainer = Color(0xFF211634)
 private val light_error = Color(0xFFba1b1b)
 private val light_errorContainer = Color(0xFFffdad4)
 private val light_onError = Color(0xFFba1b1b)
 private val light_onErrorContainer = Color(0xFF410001)
 private val light_onBackground = Color(0xFF1a1c1e)
-private val light_surface = Color(0xFFfcfcff)
+
 private val light_onSurface = Color(0xFF1a1c1e)
 private val light_surfaceVariant = Color(0xFFdee3ea)
 private val light_onSurfaceVariant = Color(0xFF41474d)
@@ -53,15 +54,15 @@ private val dark_onSecondaryContainer = Color(0xFFb2b8c5)
 private val dark_tertiary = Color(0xFF9ddec6)
 private val dark_onTertiary = Color(0xFFdcb392)
 private val dark_tertiaryContainer = Color(0xFF9ebad5)
+private val dark_onTertiaryContainer = Color(0xFF614ab4)
+private val dark_surface = Color(0xFF9a83ed)
 
-
-private val dark_onTertiaryContainer = Color(0xFFecdcff)
 private val dark_error = Color(0xFFffb4a9)
 private val dark_errorContainer = Color(0xFF930006)
 private val dark_onError = Color(0xFF680003)
 private val dark_onErrorContainer = Color(0xFFffdad4)
 private val dark_onBackground = Color(0xFFe2e2e5)
-private val dark_surface = Color(0xFF1a1c1e)
+
 private val dark_onSurface = Color(0xFFe2e2e5)
 private val dark_surfaceVariant = Color(0xFF41474d)
 private val dark_onSurfaceVariant = Color(0xFFc2c7ce)
@@ -90,10 +91,10 @@ private  val lightColorScheme = ShippingAppColorScheme(
     tertiary = light_tertiary,
     onTertiary = light_onTertiary,
     tertiaryContainer = light_tertiaryContainer,
-
-
-
     onTertiaryContainer = light_onTertiaryContainer,
+    inverseSurface = light_surface,
+
+
     error = light_error,
     errorContainer = light_errorContainer,
     onError = light_onError,
@@ -106,7 +107,7 @@ private  val lightColorScheme = ShippingAppColorScheme(
     onSurfaceVariant = light_onSurfaceVariant,
     outline = light_outline,
     inverseOnSurface = light_inverseOnSurface,
-    inverseSurface = onboarding_buttonColor,
+
     scrim = light_ColorBar,
 
     )
@@ -124,6 +125,8 @@ private val darkColorScheme = ShippingAppColorScheme(
     tertiary = dark_tertiary,
     onTertiary = dark_onTertiary,
     tertiaryContainer = dark_tertiaryContainer,
+    onTertiaryContainer = dark_onTertiaryContainer,
+    inverseSurface = dark_surface,
 
 
 
@@ -132,7 +135,7 @@ private val darkColorScheme = ShippingAppColorScheme(
 
 
 
-    onTertiaryContainer = dark_onTertiaryContainer,
+
     error = dark_onError,
     errorContainer = dark_errorContainer,
     onError = dark_onError,
@@ -145,7 +148,7 @@ private val darkColorScheme = ShippingAppColorScheme(
     onSurfaceVariant = dark_onSurfaceVariant,
     outline = dark_outline,
     inverseOnSurface = dark_inverseOnSurface,
-    inverseSurface = onboarding_buttonColor,
+
     scrim = light_ColorBar,
 )
 

@@ -17,6 +17,7 @@ appcompat = "1.7.0"
 viewmodel = "2.8.7"
 lifecycle = "2.8.7"
 material = "1.12.0"
+serialization = "1.6.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,16 +39,21 @@ navigation-compose = { group = "androidx.navigation", name = "navigation-compose
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 viewmodel-lifecycle = { group ="androidx.lifecycle", name ="lifecycle-viewmodel-compose",version.ref="viewmodel" }
 lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+kotlin-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "serialization" }
+kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
 
 
 [bundles]
-androidx = [ "androidx-core-ktx" , "androidx-lifecycle-runtime-ktx","viewmodel-lifecycle", "lifecycle-viewmodel-ktx"]
+androidx = [ "androidx-core-ktx" , "androidx-lifecycle-runtime-ktx","viewmodel-lifecycle", "lifecycle-viewmodel-ktx","kotlin-serialization-json","kotlin-serialization-core"]
 compose = ["androidx-activity-compose","androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling-preview", "androidx-material3", "navigation-compose"]
 compose-debug = ["androidx-ui-tooling", "androidx-ui-test-manifest"]

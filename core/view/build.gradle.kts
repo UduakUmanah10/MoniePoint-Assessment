@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -38,6 +39,7 @@ android {
 
 dependencies {
     api(libs.bundles.compose)
+    api(libs.bundles.androidx)
     api(platform(libs.androidx.compose.bom))
     androidTestImplementation(platform(libs.androidx.compose.bom))
     debugImplementation(libs.bundles.compose.debug)

@@ -6,6 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -61,6 +62,11 @@ fun colorSelextor(input:String):Color{
 
 @Composable
 fun lazyColumn(){
+
+
+
+
+
     LazyColumn(contentPadding = PaddingValues( 7.dp),
         modifier = Modifier
             .background(ShippingAppTheme
