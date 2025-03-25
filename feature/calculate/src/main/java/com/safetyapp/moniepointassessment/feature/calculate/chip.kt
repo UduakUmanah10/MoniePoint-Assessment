@@ -40,15 +40,15 @@ fun filterChip(
         onClick = onClick,
         label = { Text(text = text) },
         colors = FilterChipDefaults.filterChipColors(
-            selectedContainerColor = Color.Black,
-            selectedLabelColor = Color.White
+            selectedContainerColor = ShippingAppTheme.colorScheme.secondaryContainer,
+            selectedLabelColor = ShippingAppTheme.colorScheme.onSecondaryContainer
 
         ),
         leadingIcon = {
             if (selected) Icon(
-                painter = painterResource(id = R.drawable.loading),
+                painter = painterResource(id = R.drawable.check),
                 contentDescription = "",
-                tint = ShippingAppTheme.colorScheme.error,
+                tint = ShippingAppTheme.colorScheme.onSecondaryContainer,
                 modifier = Modifier.size(20.dp),
             )
         }

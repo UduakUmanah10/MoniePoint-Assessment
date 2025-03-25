@@ -1,5 +1,6 @@
 package com.safetyapp.moniepointassessment.feature.calculate
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -7,10 +8,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -19,7 +22,7 @@ import com.safetyapp.composables.PreviewAndLightDark
 import com.safetyapp.moniepointassessment.core.view.R
 import com.safetyapp.theme.ShippingAppTheme
 
-
+//ShippingAppTheme.colorScheme.onSecondary
 @Composable
 fun multipleTextInput(
     firstInputText: String = "",
@@ -34,7 +37,7 @@ fun multipleTextInput(
     Surface(
         modifier = Modifier.padding(12.dp).fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
-        color = Color.Red
+        color = ShippingAppTheme.colorScheme.background
     ) {
 
 
@@ -51,13 +54,25 @@ fun multipleTextInput(
                 labelText = "",
                 placeholderText = firstInputPlaceholderText,
                 leadingIcon = {
-                    Icon(
-                        painter = painterResource(id = R.drawable.loading),
+                    Image(
+                        painter = painterResource(id = R.drawable.topbox),
                         contentDescription = "",
-                        tint = ShippingAppTheme.colorScheme.error,
-                        modifier = Modifier.size(30.dp),
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .size(30.dp)
                     )
                 },
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = ShippingAppTheme.colorScheme.onSecondary,
+                    unfocusedBorderColor =ShippingAppTheme.colorScheme.onSecondary,
+                    disabledBorderColor = Color.Blue,
+                    disabledTextColor = Color.Blue,
+                    disabledSupportingTextColor = Color.Blue,
+                    unfocusedContainerColor = ShippingAppTheme.colorScheme.onSecondary,
+                    focusedContainerColor = ShippingAppTheme.colorScheme.onSecondary
+                ),
+
                 shape = ShippingAppTheme.shape.TextfieldShape,
                 showTrailingIcon = false,
             )
@@ -67,13 +82,24 @@ fun multipleTextInput(
                 labelText = "",
                 placeholderText = secondInputPlaceholderText,
                 leadingIcon = {
-                    Icon(
-                        painter = painterResource(id = R.drawable.loading),
+                    Image(
+                        painter = painterResource(id = R.drawable.bottombox),
                         contentDescription = "",
-                        tint = ShippingAppTheme.colorScheme.error,
-                        modifier = Modifier.size(30.dp),
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .size(23.dp)
                     )
                 },
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = ShippingAppTheme.colorScheme.onSecondary,
+                    unfocusedBorderColor =ShippingAppTheme.colorScheme.onSecondary,
+                    disabledBorderColor = Color.Blue,
+                    disabledTextColor = Color.Blue,
+                    disabledSupportingTextColor = Color.Blue,
+                    unfocusedContainerColor = ShippingAppTheme.colorScheme.onSecondary,
+                    focusedContainerColor = ShippingAppTheme.colorScheme.onSecondary
+                ),
                 shape = ShippingAppTheme.shape.TextfieldShape,
                 showTrailingIcon = false,
             )
@@ -83,13 +109,24 @@ fun multipleTextInput(
                 labelText = "",
                 placeholderText = thirdInputPlaceHolderText,
                 leadingIcon = {
-                    Icon(
-                        painter = painterResource(id = R.drawable.loading),
+                    Image(
+                        painter = painterResource(id = R.drawable.scale),
                         contentDescription = "",
-                        tint = ShippingAppTheme.colorScheme.error,
-                        modifier = Modifier.size(30.dp),
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .size(25.dp)
                     )
                 },
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = ShippingAppTheme.colorScheme.onSecondary,
+                    unfocusedBorderColor =ShippingAppTheme.colorScheme.onSecondary,
+                    disabledBorderColor = Color.Blue,
+                    disabledTextColor = Color.Blue,
+                    disabledSupportingTextColor = Color.Blue,
+                    unfocusedContainerColor = ShippingAppTheme.colorScheme.onSecondary,
+                    focusedContainerColor = ShippingAppTheme.colorScheme.onSecondary
+                ),
                 shape = ShippingAppTheme.shape.TextfieldShape,
                 showTrailingIcon = false,
             )
