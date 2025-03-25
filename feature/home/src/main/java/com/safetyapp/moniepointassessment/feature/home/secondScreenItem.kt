@@ -5,7 +5,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Surface
@@ -29,8 +31,8 @@ fun SecondScreenItem() {
         shape = RoundedCornerShape(10.dp),
         color =  ShippingAppTheme.colorScheme.background,
 
-        modifier = Modifier
-            .fillMaxWidth().padding(5.dp)
+        modifier = Modifier.padding(5.dp).wrapContentHeight()
+            .fillMaxWidth()
 
     ) {
         Column(
@@ -48,7 +50,7 @@ fun SecondScreenItem() {
             )
 
             HorizontalDivider(
-                color = Color.Red,
+                color = ShippingAppTheme.colorScheme.onSecondary,
                 modifier = Modifier.padding(top = 5.dp, bottom = 5.dp),
             )
 
@@ -57,12 +59,12 @@ fun SecondScreenItem() {
                 rightFirstText = "Sender",
                 rightSecondText = "Atlanta 5243",
                 leftFirstText = "Time",
-                leftSecondText = "2 day -3days",
+                leftSecondText = "2 day -   3days",
                 surfaceColor = Color.Green,
                 image = com.safetyapp.moniepointassessment.core.view.R.drawable.redbox
             )
             HorizontalDivider(
-                color = Color.Red,
+                color = ShippingAppTheme.colorScheme.onSecondary,
                 modifier = Modifier.padding(top = 5.dp, bottom = 5.dp),
             )
 
@@ -72,13 +74,13 @@ fun SecondScreenItem() {
                 rightFirstText = "Sender",
                 rightSecondText = "Atlanta 5243",
                 leftFirstText = "Time",
-                leftSecondText = "2 day -3days",
+                leftSecondText = "Waiting to collect",
                 surfaceColor = Color.Green,
                 image = com.safetyapp.moniepointassessment.core.view.R.drawable.greenbox
             )
 
             HorizontalDivider(
-                color = Color.Red,
+                color =ShippingAppTheme.colorScheme.onSecondary,
                 modifier = Modifier.padding(top = 5.dp, bottom = 5.dp),
             )
 

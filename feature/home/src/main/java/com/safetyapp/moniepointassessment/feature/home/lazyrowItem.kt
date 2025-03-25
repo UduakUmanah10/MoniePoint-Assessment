@@ -1,5 +1,6 @@
 package com.safetyapp.moniepointassessment.feature.home
 
+import androidx.annotation.DrawableRes
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
@@ -31,9 +32,13 @@ import androidx.compose.ui.unit.sp
 import com.safetyapp.composables.PreviewAndLightDark
 
 @Composable
-fun OceanFreightCard() {
-    // Animation to slide the image from left to right
-    val offsetX = remember { Animatable(100f) } // Start off-screen to the left
+fun OceanFreightCard(
+    firstText:String ="Ocean freight",
+    secondTExt:String = "International",
+    @DrawableRes image:Int = com.safetyapp.moniepointassessment.core.view.R.drawable.ship
+) {
+
+    val offsetX = remember { Animatable(100f) }
 
     LaunchedEffect(Unit) {
         offsetX.animateTo(
@@ -45,7 +50,7 @@ fun OceanFreightCard() {
     Surface(
         modifier = Modifier
             .wrapContentWidth()
-            .padding(16.dp),
+            .padding(10.dp),
         shape = RoundedCornerShape(8.dp),
         color = Color.White,
         tonalElevation = 2.dp, // Material 3 elevation
@@ -59,20 +64,20 @@ fun OceanFreightCard() {
         ) {
             Column(modifier = Modifier.align(Alignment.TopStart)) {
                 Text(
-                    text = "Ocean freight",
+                    text = firstText,
                     fontSize = 20.sp,
                     fontWeight = FontWeight.W400,
                     color = Color.Black
                 )
                 Text(
-                    text = "International",
+                    text = secondTExt,
                     fontSize = 15.sp,
                     color = Color.Gray
                 )
             }
 
             Image(
-                painter = painterResource(id = com.safetyapp.moniepointassessment.core.view.R.drawable.ship), // Ensure "ship.PNG" is in res/drawable
+                painter = painterResource(id = image), // Ensure "ship.PNG" is in res/drawable
                 contentDescription = "Ship",
                 //  contentScale = ContentScale.Fit,
                 modifier = Modifier
