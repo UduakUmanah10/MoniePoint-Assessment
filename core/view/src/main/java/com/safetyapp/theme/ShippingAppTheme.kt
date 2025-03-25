@@ -17,11 +17,9 @@ private val light_onPrimary = Color(0xFFe47929)
 private val light_primaryContainer = Color(0xFFc9e6ff)
 private val light_onPrimaryContainer = Color(0xFFc7c7c7)
 private val light_secondary = Color(0xFF414145)
+private val light_onSecondary = Color(0xFFf9f9f9)
 
 
-
-
-private val light_onSecondary = Color(0xFFffffff)
 private val light_secondaryContainer = Color(0xFFd3e4f5)
 private val light_onSecondaryContainer = Color(0xFF0c1d29)
 private val light_tertiary = Color(0xFF65587b)
@@ -48,12 +46,9 @@ private val dark_onPrimary = Color(0xFFe47929)
 private val dark_primaryContainer = Color(0xFF004b72)
 private val dark_onPrimaryContainer = Color(0xFFc7c7c7)
 private val dark_secondary = Color(0xFF414145)
+private val dark_onSecondary = Color(0xFFf9f9f9)
 
 
-
-
-
-private val dark_onSecondary = Color(0xFFfefefe)
 private val dark_secondaryContainer = Color(0xFF394956)
 private val dark_onSecondaryContainer = Color(0xFFd3e4f5)
 private val dark_tertiary = Color(0xFFd0c0e8)
@@ -88,9 +83,8 @@ private  val lightColorScheme = ShippingAppColorScheme(
     primaryContainer = light_primaryContainer,
     onPrimaryContainer = light_onPrimaryContainer,
     secondary = light_secondary,
-
-
     onSecondary = light_onSecondary,
+
     secondaryContainer = light_secondaryContainer,
     onSecondaryContainer = light_onSecondaryContainer,
     tertiary = light_secondary,
@@ -121,11 +115,12 @@ private val darkColorScheme = ShippingAppColorScheme(
     onPrimary = dark_onPrimary,
     onPrimaryContainer = dark_onPrimaryContainer,
     secondary = dark_secondary,
+    onSecondary = dark_onSecondary,
 
 
 
     primaryContainer = dark_primaryContainer,
-    onSecondary = light_onSecondary,
+
     secondaryContainer = dark_onSecondaryContainer,
     onSecondaryContainer = dark_onSecondaryContainer,
     tertiary = button_cardBackground,

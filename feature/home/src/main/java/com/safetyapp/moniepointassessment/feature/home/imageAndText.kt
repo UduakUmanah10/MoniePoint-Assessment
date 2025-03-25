@@ -45,7 +45,7 @@ fun ImageandText(
 
     Row(modifier = Modifier.wrapContentWidth()){
         Image(
-            painter = painterResource(id = com.safetyapp.moniepointassessment.core.view.R.drawable.tractor),
+            painter = painterResource(id = com.safetyapp.moniepointassessment.core.view.R.drawable.uduak),
             contentDescription = imageContentDescription,
             contentScale = ContentScale.Crop,
             modifier = Modifier

@@ -153,9 +153,9 @@ fun leftContent(
             if(showIndicator){
                 Surface(
                     modifier = Modifier
-                        .padding(4.dp)
-                        .height(5.dp)
-                        .width(5.dp),
+                        .padding(5.dp)
+                        .height(7.dp)
+                        .width(7.dp),
                     shape = CircleShape,
                     color = surfaceColor
                 ){  }
