@@ -28,6 +28,9 @@ fun multipleTextInput(
     firstInputText: String = "",
     secondTextInput:String ="",
     thirdTextInput:String ="",
+    onFirstTextChanged: (String) -> Unit = {},
+    onSecondTextChanged: (String) -> Unit = {},
+    onThirdTextChanged: (String) -> Unit = {},
     secondInputPlaceholderText: String = stringResource(R.string.Receiver_Location),
     firstInputPlaceholderText: String = stringResource(R.string.Sender_Location),
     thirdInputPlaceHolderText: String = stringResource(R.string.Approx_Weight),
@@ -50,7 +53,7 @@ fun multipleTextInput(
 
             CustomTextField(
                 text = firstInputText,
-                onTextChanged = {},
+                onTextChanged = onFirstTextChanged,
                 labelText = "",
                 placeholderText = firstInputPlaceholderText,
                 leadingIcon = {
@@ -78,7 +81,7 @@ fun multipleTextInput(
             )
             CustomTextField(
                 text = secondTextInput,
-                onTextChanged = {},
+                onTextChanged = onSecondTextChanged,
                 labelText = "",
                 placeholderText = secondInputPlaceholderText,
                 leadingIcon = {
@@ -105,7 +108,7 @@ fun multipleTextInput(
             )
             CustomTextField(
                 text = thirdTextInput,
-                onTextChanged = {},
+                onTextChanged = onThirdTextChanged,
                 labelText = "",
                 placeholderText = thirdInputPlaceHolderText,
                 leadingIcon = {

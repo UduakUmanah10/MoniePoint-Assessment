@@ -2,24 +2,32 @@ package com.safetyapp.moniepointassessment.feature.shipment
 
 
 import androidx.annotation.DrawableRes
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.safetyapp.composables.PreviewAndLightDark
 import com.safetyapp.theme.ShippingAppTheme
+import kotlinx.coroutines.delay
 
 
 data class lazydata(
-    @DrawableRes val icon:Int,
-    val  state:String
+    @DrawableRes val icon: Int,
+    val state: String
 )
 
-val data :List<lazydata> = listOf(
+val data: List<lazydata> = listOf(
     lazydata(
         com.safetyapp.moniepointassessment.core.view.R.drawable.loading,
         "loading"
@@ -50,8 +58,8 @@ val data :List<lazydata> = listOf(
     )
 
 @Composable
-fun colorSelextor(input:String):Color{
-    return when(input){
+fun colorSelextor(input: String): Color {
+    return when (input) {
         "loading" -> ShippingAppTheme.colorScheme.tertiaryContainer
         "pending" -> ShippingAppTheme.colorScheme.onTertiary
         else -> ShippingAppTheme.colorScheme.tertiary
@@ -61,40 +69,61 @@ fun colorSelextor(input:String):Color{
 
 
 @Composable
-fun lazyColumn(){
+fun lazyColumn() {
 
 
-
-
-
-    LazyColumn(contentPadding = PaddingValues( 7.dp),
+    LazyColumn(
+        contentPadding = PaddingValues(7.dp),
         modifier = Modifier
-            .background(ShippingAppTheme
-                .colorScheme.onSecondary
-            )) {
-
-        // Add 5 items
-        items(data.size) { index ->
-            lazyColumContent(
-                icon = data[index].icon,
-                text = data[index].state,
-                tint = colorSelextor(data[index].state),
-                textColor = colorSelextor(data[index].state),
-                surfaceColor = ShippingAppTheme.colorScheme.onSecondary
-
+            .background(
+                ShippingAppTheme
+                    .colorScheme.onSecondary
             )
+    ) {
+
+
+        items(data.size) { index ->
+            AnimatedBoxEntry {
+                lazyColumContent(
+                    icon = data[index].icon,
+                    text = data[index].state,
+                    tint = colorSelextor(data[index].state),
+                    textColor = colorSelextor(data[index].state),
+                    surfaceColor = ShippingAppTheme.colorScheme.onSecondary
+
+                )
+            }
         }
 
     }
 }
 
 
+@Composable
+fun AnimatedBoxEntry(
+    composable: @Composable () -> Unit = {}
+) {
+    var isVisible by remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        delay(500L)
+        isVisible = true
+    }
+
+    AnimatedVisibility(
+        visible = isVisible,
+        enter = slideInVertically(initialOffsetY = { it }) + fadeIn(), // Enter from bottom
+    ) {
+        composable()
+    }
+}
+
 
 @PreviewAndLightDark
 @Composable
-fun PreviewLazyColumn(){
+fun PreviewLazyColumn() {
 
-    ShippingAppTheme{
+    ShippingAppTheme {
 
         lazyColumn()
     }
