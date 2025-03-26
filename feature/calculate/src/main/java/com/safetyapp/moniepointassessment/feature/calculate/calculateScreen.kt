@@ -12,8 +12,11 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -28,7 +31,16 @@ import com.safetyapp.theme.ShippingAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CalculateScreen(){
+fun CalculateScreen(
+    onBackIconCLicked: () -> Unit = {},
+    onCalculateClicked: () -> Unit = {}
+){
+
+    var text by remember { mutableStateOf("") }
+    var secondText by remember { mutableStateOf("") }
+    var thirdText by remember { mutableStateOf("") }
+
+
     Column(modifier = Modifier.fillMaxHeight().background(ShippingAppTheme.colorScheme.onSecondary)
     ) {
         val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
@@ -38,7 +50,7 @@ fun CalculateScreen(){
             centeredText =  stringResource(R.string.topAppbartext),
             leadingICon = R.drawable.backwardsarrow,
             iconColor = ShippingAppTheme.colorScheme.background,
-            onLeadingIconClicked = {},
+            onLeadingIconClicked = onBackIconCLicked,
             titleContentColor = ShippingAppTheme.colorScheme.background,
             containerColor = ShippingAppTheme.colorScheme.primary
 
@@ -55,6 +67,12 @@ fun CalculateScreen(){
         )
 
         multipleTextInput(
+            firstInputText = text,
+            onFirstTextChanged = { text = it},
+            secondTextInput = secondText,
+            onSecondTextChanged = { secondText = it},
+            thirdTextInput = thirdText,
+            onThirdTextChanged = { thirdText = it}
 
         )
 
@@ -106,6 +124,7 @@ fun CalculateScreen(){
         }
 
         customButton(
+            onButtonClicked = onCalculateClicked,
             modifier = Modifier
                 .padding(top =50.dp,start = 12.dp, end = 12.dp)
                 .fillMaxWidth()

@@ -77,12 +77,12 @@ fun OceanFreightCard(
             }
 
             Image(
-                painter = painterResource(id = image), // Ensure "ship.PNG" is in res/drawable
+                painter = painterResource(id = image),
                 contentDescription = "Ship",
                 //  contentScale = ContentScale.Fit,
                 modifier = Modifier
                     .size(500.dp)
-                    .offset(x = offsetX.value.dp, y = 40.dp) // Slide animation
+                    .offset(x = offsetX.value.dp, y = 40.dp)
                     .align(Alignment.BottomEnd)
             )
         }

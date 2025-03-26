@@ -48,7 +48,7 @@ fun SecondScreenItem() {
 
             HorizontalDivider(
                 color = ShippingAppTheme.colorScheme.onSecondary,
-                modifier = Modifier.padding(top = 5.dp, bottom = 5.dp),
+                modifier = Modifier.padding(top = 2.dp, bottom = 2.dp),
             )
 
             packagedelivery(
@@ -62,7 +62,7 @@ fun SecondScreenItem() {
             )
             HorizontalDivider(
                 color = ShippingAppTheme.colorScheme.onSecondary,
-                modifier = Modifier.padding(top = 5.dp, bottom = 5.dp),
+                modifier = Modifier.padding(top = 2.dp, bottom = 2.dp),
             )
 
             packagedelivery(
@@ -78,7 +78,7 @@ fun SecondScreenItem() {
 
             HorizontalDivider(
                 color =ShippingAppTheme.colorScheme.onSecondary,
-                modifier = Modifier.padding(top = 5.dp, bottom = 5.dp),
+                modifier = Modifier.padding(top = 2.dp, bottom = 2.dp),
             )
 
             TextButton(onClick = { /*TODO*/ }) {

@@ -1,5 +1,9 @@
 package com.safetyapp.moniepointassessment.feature.calculate
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -19,12 +23,15 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 
 import androidx.compose.ui.unit.dp
 import com.safetyapp.composables.PreviewAndLightDark
 import com.safetyapp.moniepointassessment.core.view.R
 import com.safetyapp.theme.ShippingAppTheme
 
+import androidx.compose.runtime.*
+import kotlinx.coroutines.delay
 
 @Composable
 fun filterChip(
@@ -35,7 +42,9 @@ fun filterChip(
 
 
     FilterChip(
-        modifier = Modifier.padding(5.dp).height(40.dp),
+        modifier = Modifier
+            .padding(5.dp)
+            .height(40.dp),
         selected = selected,
         onClick = onClick,
         label = { Text(text = text) },
@@ -82,12 +91,50 @@ fun flowrow(
     )
     {
         list.forEach {
-            filterChip(
-                text = it,
-                onClick = { onOptionSelected(it) },
-                selected = it in selectedList)
+            AnimatedBoxEntryHorizontal {
+                filterChip(
+                    text = it,
+                    onClick = { onOptionSelected(it) },
+                    selected = it in selectedList
+                )
+
+            }
+
 
         }
+    }
+}
+
+@Composable
+fun AnimatedBoxEntryHorizontal(
+    composeItem: @Composable () -> Unit = {}
+) {
+    var isVisible by remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        delay(500L) // Optional delay before animation starts
+        isVisible = true
+    }
+
+    AnimatedVisibility(
+        visible = isVisible,
+        enter = slideInHorizontally(initialOffsetX = { it }) + fadeIn(), // Enter from right
+    ) {
+        composeItem()
+
+    }
+}
+
+@Preview
+@Composable
+fun PreviewAnimatedBoxEntry() {
+    AnimatedBoxEntryHorizontal() {
+        Box(
+            modifier = Modifier
+                .size(20.dp)
+                .background(Color.Blue)
+        )
+
     }
 }
 

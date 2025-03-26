@@ -17,12 +17,14 @@ import com.safetyapp.theme.ShippingAppTheme
 @Composable
 fun firstScreenContent(){
 
+
     Surface(
         modifier = Modifier
             .fillMaxWidth()
             .height(200.dp),
         color = ShippingAppTheme.colorScheme.primary
     ) {
+
 
         Column (
             modifier = Modifier.padding(12.dp), horizontalAlignment = Alignment.CenterHorizontally,
@@ -37,9 +39,10 @@ fun firstScreenContent(){
                 firstIconTint = ShippingAppTheme.colorScheme.primary
 
             )
-        }
 
 
+
+    }
     }
 
 }

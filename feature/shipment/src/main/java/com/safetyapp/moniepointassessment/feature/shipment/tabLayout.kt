@@ -1,6 +1,7 @@
 package com.safetyapp.moniepointassessment.feature.shipment
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -50,7 +51,7 @@ val tabitems = listOf<Tabitem>(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Tablayout() {
+fun Tablayout(onLeadingIconClicked:()->Unit ={}) {
 
     var selecteditem by remember {
         mutableIntStateOf(0)
@@ -60,7 +61,7 @@ fun Tablayout() {
     val coroutineScope = rememberCoroutineScope()
 
     Column(
-        Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween
+        Modifier.fillMaxSize(),
     ) {
 
 
@@ -71,71 +72,77 @@ fun Tablayout() {
             centeredText =  stringResource(R.string.shipment_hitory),
             leadingICon = R.drawable.backwardsarrow,
             iconColor = ShippingAppTheme.colorScheme.background,
-            onLeadingIconClicked = {},
+            onLeadingIconClicked = onLeadingIconClicked,
             titleContentColor = ShippingAppTheme.colorScheme.background,
             containerColor = ShippingAppTheme.colorScheme.primary
 
         )
-        
-        ScrollableTabRow(
-            selectedTabIndex = pageState.currentPage,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(50.dp),
 
-            containerColor = ShippingAppTheme.colorScheme.primary,
-            divider = {},
-            indicator = { tabPositions ->
-                TabRowDefaults.SecondaryIndicator(
-                    Modifier.tabIndicatorOffset(tabPositions[selecteditem]),
-                    color = ShippingAppTheme.colorScheme.background,
-                    height = 2.dp
+        Box(){
+            ScrollableTabRow(
+                selectedTabIndex = pageState.currentPage,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp),
+                edgePadding = 10.dp,
 
-                )
-            }
+                containerColor = ShippingAppTheme.colorScheme.primary,
+                divider = {},
+                indicator = { tabPositions ->
+                    TabRowDefaults.SecondaryIndicator(
+                        Modifier.tabIndicatorOffset(tabPositions[selecteditem]),
+                        color = ShippingAppTheme.colorScheme.background,
+                        height = 2.dp
+
+                    )
+                }
 
 
-        ) {
-            tabitems.forEachIndexed { index, tabitem ->
-                Tab(
-                    modifier = Modifier
-                        .height(50.dp)
-                        .fillMaxWidth(),
-                    selected = pageState.currentPage == index,
-                    onClick = {
-                        selecteditem = index
-                        coroutineScope.launch {
-                            pageState.animateScrollToPage(index)
+            ) {
+                tabitems.forEachIndexed { index, tabitem ->
+                    Tab(
+                        modifier = Modifier
+                            .height(50.dp)
+                            .fillMaxWidth(),
+                        selected = pageState.currentPage == index,
+                        onClick = {
+                            selecteditem = index
+                            coroutineScope.launch {
+                                pageState.animateScrollToPage(index)
+                            }
                         }
-                    }
-                ) {
-                    Row(
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
                     ) {
+                        Row(
+                            horizontalArrangement = Arrangement.Center,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
 
-                        Text(
-                            text = tabitem.title,
-                            modifier = Modifier.padding(8.dp),
-                            color =
-                                if (selecteditem == index) ShippingAppTheme.colorScheme.background
-                                else ShippingAppTheme.colorScheme.inverseSurface
-                        )
-                        Tabchip(
-                            textColor =
-                                if (selecteditem == index) ShippingAppTheme.colorScheme.background
-                                else ShippingAppTheme.colorScheme.inverseSurface,
+                            Text(
+                                text = tabitem.title,
+                                modifier = Modifier.padding(8.dp),
+                                color =
+                                    if (selecteditem == index) ShippingAppTheme.colorScheme.background
+                                    else ShippingAppTheme.colorScheme.inverseSurface
+                            )
+                            Tabchip(
+                                textColor =
+                                    if (selecteditem == index) ShippingAppTheme.colorScheme.background
+                                    else ShippingAppTheme.colorScheme.inverseSurface,
 
-                            color =
-                                if (selecteditem == index) ShippingAppTheme.colorScheme.onPrimary
-                                else ShippingAppTheme.colorScheme.onTertiaryContainer
-                        )
+                                color =
+                                    if (selecteditem == index) ShippingAppTheme.colorScheme.onPrimary
+                                    else ShippingAppTheme.colorScheme.onTertiaryContainer
+                            )
+                        }
+
+
                     }
-
-
                 }
             }
+
+
         }
+        
 
         HorizontalPager(state = pageState, userScrollEnabled = false) { index ->
 
